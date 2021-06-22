@@ -1,15 +1,8 @@
-import * as express from "express";
+import useRouter from "./SubRoutes/user";
+import { Express , Router , Request , Response } from 'express'
 
-    //import sub-routers
-    import {adminRouter } from "./SubRoutes/admin";
+const routes = Router();
 
-    export const MainRouter = () => {
+routes.use('/users', useRouter);
 
-      let router = express.Router();
-
-
-      router.use('/admin', adminRouter);
-
-      //return for revealing module pattern
-      return router;
-    }
+export default routes;
