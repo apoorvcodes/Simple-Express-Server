@@ -16,7 +16,11 @@
   },
   "dependencies": {
     "@types/mongoose": "^5.11.97",
+    "@types/pino": "^6.3.8",
+    "dayjs": "^1.10.5",
     "express": "^4.17.1",
-    "mongoose": "^5.12.14"
+    "mongoose": "^5.12.14",
+    "pino": "^6.11.3",
+    "pino-pretty": "^5.0.2"
   }
 }
