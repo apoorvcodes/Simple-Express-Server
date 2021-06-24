@@ -1,7 +1,7 @@
 
 import {Router} from 'express'
  const useRouter = Router();
-import {User} from '../DataBase/Schema/User'
+import {User} from '../../DataBase/Schema/User'
 import {body, validationResult} from 'express-validator'
 
 
