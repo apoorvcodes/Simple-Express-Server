@@ -1,6 +1,6 @@
 import  express  from 'express';
 import { Port,Host } from './constants';
-import { MongoConnect } from './DataBase/userEnt';
+import { MongoConnect } from './DataBase/main';
 import  log from './logger/PinoLogger'
 import  routes from './Routes/index'
 
