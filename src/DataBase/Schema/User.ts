@@ -22,6 +22,7 @@ export const User = mongoose.model('User', new mongoose.Schema({
         maxlength: 1024
     },
     UpdatedAt: {
+    required: false,
 	type: Date,
 	default: Date.now
       }

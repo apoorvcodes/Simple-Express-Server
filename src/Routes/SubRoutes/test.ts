@@ -3,7 +3,7 @@ import {Router , Response} from 'express'
 
 
 
-TestRouter.post('/',async (_,res : Response) => {
+TestRouter.get('/',async (_,res : Response) => {
 res.send("works")
 })
 
