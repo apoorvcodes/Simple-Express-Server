@@ -11,7 +11,6 @@ body('password').isLength({min: 5}),
 body('username').isLength({min: 5, max : 21}),async (req,res) => {
 
        const error = validationResult(req.body);
-
 	if (error) {
 	    res.status(400).send('Body Params were not met')
 	}
@@ -32,11 +31,11 @@ body('username').isLength({min: 5, max : 21}),async (req,res) => {
 		email: req.body.email,
 		password: req.body.password,
 		UpdatedAt: Date.now()
-	    });
-	    await user.save();
-	    res.send(user);
-	}
-})
+	    })
+	   
+	await user.save();
+	res.send(user);
+}})
 
 export default useRouter;
 

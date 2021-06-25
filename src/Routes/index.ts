@@ -1,9 +1,15 @@
-import useRouter from "./SubRoutes/user";
+import useRouter from "./SubRoutes/userRegister";
 import {  Router  } from 'express'
-import TestRouter from "./SubRoutes/test";
+import loginRouter from './SubRoutes/userLogin'
+import deleteRouter from './SubRoutes/userDelete'
+import dataRouter from './SubRoutes/userData'
+
 const routes = Router();
 
-routes.use('/users', useRouter);
-routes.use('/tests', TestRouter);
+routes.use('/register', useRouter);
+routes.use('/login', loginRouter);
+routes.use('/delte', deleteRouter);
+routes.use('/data', dataRouter);
+
 
 export default routes;
