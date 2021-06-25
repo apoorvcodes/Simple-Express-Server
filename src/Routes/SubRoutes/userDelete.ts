@@ -7,7 +7,7 @@ const deleteRouter = Router()
 deleteRouter.delete('/', 
 body('email').isEmail(),
 body('password').isLength({min:5}),
-async (req,res) =>
+async (req: Request,res: Response) =>
 {
 const error = validationResult(req.body);
 if(error){
