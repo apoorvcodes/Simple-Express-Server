@@ -3,20 +3,20 @@ import {Router} from 'express'
  const useRouter = Router();
 import {User} from '../../DataBase/Schema/User'
 import {body, validationResult} from 'express-validator'
-
+import { errorFormatter } from '../errorHandler';
+import {Request, Response} from 'express'
 
 useRouter.post('/',
 body('email').isEmail(),
 body("username").isLength({min:5}),
 body("Password").isLength({min:5}),
 
-async (req,res) => {
+async (req:Request,res:Response) => {
 
-       const error = validationResult(req.body).array();
-	if (error) {
-	    res.status(400).send('Body Params were not met')
-	}
-	
+const result = validationResult(req).formatWith(errorFormatter);
+  if (!result.isEmpty()) {
+  res.json({ errors: result.array() });
+  }
 	let user = await User.findOne({ email: req.body.email });
 	let userName = await User.findOne({ email: req.body.username });
 	if (user) {

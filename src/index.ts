@@ -14,8 +14,11 @@ app.use(cookieSession({
 app.listen(Port, Host, () => log.info(`Port Started on ${Port}`))
 app.use('/api', routes);
 app.use(express.json)
-}
 
+}
+process.on('uncaughtException', function (err) {
+	console.log(err);
+ }); 
 
 MongoConnect();
 
