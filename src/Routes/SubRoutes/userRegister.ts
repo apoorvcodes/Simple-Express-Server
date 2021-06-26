@@ -7,8 +7,10 @@ import {body, validationResult} from 'express-validator'
 
 useRouter.post('/',
 body('email').isEmail(),
-body('password').isLength({min: 5}),
-body('username').isLength({min: 5, max : 21}),async (req,res) => {
+body("username").isLength({min:5}),
+body("Password").isLength({min:5}),
+
+async (req,res) => {
 
        const error = validationResult(req.body);
 	if (error) {
