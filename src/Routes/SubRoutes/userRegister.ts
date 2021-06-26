@@ -12,7 +12,7 @@ body("Password").isLength({min:5}),
 
 async (req,res) => {
 
-       const error = validationResult(req.body);
+       const error = validationResult(req.body).array();
 	if (error) {
 	    res.status(400).send('Body Params were not met')
 	}
