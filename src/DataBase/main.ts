@@ -9,5 +9,4 @@ export const MongoConnect = async() => {
     useFindAndModify: false,
     useCreateIndex: true
   }).then(() => log.info(`Connected to Database at Port ${Port}`))
-
 }

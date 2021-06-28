@@ -13,6 +13,9 @@ const error = validationResult(req.body);
 if(error){
  res.status(400).send('Valind Params were not found please Provide email and password to login')
 }
+else{
+	
+}
 })
 
 export default loginRouter;
