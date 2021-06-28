@@ -25,9 +25,8 @@ const result = validationResult(req).formatWith(errorFormatter);
 	if(userName){
 		 res.status(400).send('UserName already taken')
 	}
-	
 	else {
-	    // Insert the new user if they do not exist yet
+	    
 	    user = new User({
 		name: req.body.name,
 		email: req.body.email,
