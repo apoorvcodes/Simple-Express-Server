@@ -3,14 +3,13 @@ import { Port,Host } from './constants';
 import { MongoConnect } from './DataBase/main';
 import  log from './logger/PinoLogger'
 import  routes from './Routes/index'
-import  cookieSession from 'cookie-session'; 
+import cookieParser from 'cookie-parser';
+
+
+
 async function Main() {
 const app = express()
-app.use(cookieSession({
-	name: 'session',
-	keys: ['cute_Adi', 'noba', 'vedant', '69420'], //Secret 
-	maxAge: 24 * 60 * 60 * 1000 // 24 hours
-      }))
+app.use(cookieParser());
 app.listen(Port, Host, () => log.info(`Port Started on ${Port}`))
 app.use('/api', routes);
 app.use(express.json)
