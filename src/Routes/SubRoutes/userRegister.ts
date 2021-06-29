@@ -5,9 +5,7 @@ import {User} from '../../DataBase/Schema/User'
 import {body, validationResult} from 'express-validator'
 import { errorFormatter } from '../errorHandler';
 import {Request, Response} from 'express'
-let cookie = {
-	name : "simpleCookie",
-}
+
 	 
 useRouter.post('/',
 body('email').isEmail(),
@@ -39,7 +37,7 @@ const result = validationResult(req).formatWith(errorFormatter);
 	    })
 	   
 	await user.save();
-	res.cookie('userCookie', cookie, {maxAge: 10800}).send('cookie set');
+	res.cookie('userCookie', userName, {maxAge: 10800}).send('cookie set');
 	res.send(user);
 }})
 
